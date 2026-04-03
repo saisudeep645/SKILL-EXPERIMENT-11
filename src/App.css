@@ -123,16 +123,18 @@ body {
 }
 
 .nav-button {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  display: block;
+  width: 100%;
   padding: 1.5rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: white;
 }
 
 .local-btn {
@@ -155,25 +157,10 @@ body {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-.btn-icon {
-  font-size: 2.5rem;
+.nav-button:active {
+  transform: translateY(-1px);
 }
 
-.btn-content {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
-
-.btn-content strong {
-  font-size: 1.2rem;
-}
-
-.btn-content small {
-  font-size: 0.85rem;
-  opacity: 0.9;
-}
 
 /* Back Button */
 .back-button {

@@ -52,38 +52,38 @@ function Dashboard() {
               <button 
                 type="button"
                 className="nav-button local-btn" 
-                onClick={() => handleNavigation('local-users')}
-                style={{ cursor: 'pointer' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  console.log('Button clicked: local-users');
+                  handleNavigation('local-users');
+                }}
               >
-                <span className="btn-icon">📁</span>
-                <div className="btn-content">
-                  <strong>Local Users</strong>
-                  <small>Fetch API + Local JSON</small>
-                </div>
+                📁 Local Users - Fetch API + Local JSON
               </button>
               <button 
                 type="button"
                 className="nav-button api-btn" 
-                onClick={() => handleNavigation('api-users')}
-                style={{ cursor: 'pointer' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  console.log('Button clicked: api-users');
+                  handleNavigation('api-users');
+                }}
               >
-                <span className="btn-icon">🌐</span>
-                <div className="btn-content">
-                  <strong>Users API</strong>
-                  <small>Fetch API + JSONPlaceholder</small>
-                </div>
+                🌐 Users API - Fetch API + JSONPlaceholder
               </button>
               <button 
                 type="button"
                 className="nav-button posts-btn" 
-                onClick={() => handleNavigation('fake-posts')}
-                style={{ cursor: 'pointer' }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  console.log('Button clicked: fake-posts');
+                  handleNavigation('fake-posts');
+                }}
               >
-                <span className="btn-icon">📝</span>
-                <div className="btn-content">
-                  <strong>Fake API Posts</strong>
-                  <small>Axios + DummyJSON</small>
-                </div>
+                📝 Fake API Posts - Axios + DummyJSON
               </button>
             </div>
           </div>
