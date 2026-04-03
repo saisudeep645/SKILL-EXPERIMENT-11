@@ -6,14 +6,20 @@ import FakePostList from './FakePostList.jsx';
 function Dashboard() {
   const [currentView, setCurrentView] = useState('home');
 
+  const handleNavigation = (view) => {
+    console.log('Navigating to:', view);
+    setCurrentView(view);
+  };
+
   const renderView = () => {
+    console.log('Current view:', currentView);
     switch (currentView) {
       case 'local-users':
-        return <LocalUserList onBack={() => setCurrentView('home')} />;
+        return <LocalUserList onBack={() => handleNavigation('home')} />;
       case 'api-users':
-        return <UserList onBack={() => setCurrentView('home')} />;
+        return <UserList onBack={() => handleNavigation('home')} />;
       case 'fake-posts':
-        return <FakePostList onBack={() => setCurrentView('home')} />;
+        return <FakePostList onBack={() => handleNavigation('home')} />;
       default:
         return (
           <div className="dashboard">
@@ -44,8 +50,10 @@ function Dashboard() {
 
             <div className="nav-buttons">
               <button 
+                type="button"
                 className="nav-button local-btn" 
-                onClick={() => setCurrentView('local-users')}
+                onClick={() => handleNavigation('local-users')}
+                style={{ cursor: 'pointer' }}
               >
                 <span className="btn-icon">📁</span>
                 <div className="btn-content">
@@ -54,8 +62,10 @@ function Dashboard() {
                 </div>
               </button>
               <button 
+                type="button"
                 className="nav-button api-btn" 
-                onClick={() => setCurrentView('api-users')}
+                onClick={() => handleNavigation('api-users')}
+                style={{ cursor: 'pointer' }}
               >
                 <span className="btn-icon">🌐</span>
                 <div className="btn-content">
@@ -64,8 +74,10 @@ function Dashboard() {
                 </div>
               </button>
               <button 
+                type="button"
                 className="nav-button posts-btn" 
-                onClick={() => setCurrentView('fake-posts')}
+                onClick={() => handleNavigation('fake-posts')}
+                style={{ cursor: 'pointer' }}
               >
                 <span className="btn-icon">📝</span>
                 <div className="btn-content">
